@@ -31,66 +31,6 @@ namespace ChatHubWPF
             Application.Current.Shutdown();
         }
 
-        private void SignInUsernameBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignInUsernameBox.Text == "Username") SignInUsernameBox.Text = "";
-        }
-
-        private void SignInUsernameBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignInUsernameBox.Text == "") SignInUsernameBox.Text = "Username";
-        }
-
-        private void SignInPasswordBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignInPasswordBox.Password == "password") SignInPasswordBox.Password = "";
-        }
-
-        private void SignInPasswordBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignInPasswordBox.Password == "") SignInPasswordBox.Password = "password";
-        }
-
-        private void SignUpNameBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignUpNameBox.Text == "Name") SignUpNameBox.Text = "";
-        }
-
-        private void SignUpNameBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignUpNameBox.Text == "") SignUpNameBox.Text = "Name";
-        }
-
-        private void SignupEmailBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignUpEmailBox.Text == "Email") SignUpEmailBox.Text = "";
-        }
-
-        private void SignupEmailBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignUpEmailBox.Text == "") SignUpEmailBox.Text = "Email";
-        }
-
-        private void SignUpUsernameBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignUpUsernameBox.Text == "Username") SignUpUsernameBox.Text = "";
-        }
-
-        private void SignUpUsernameBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignUpUsernameBox.Text == "") SignUpUsernameBox.Text = "Username";
-        }
-
-        private void SignUpPasswordBoxMouseEnter(object sender, MouseEventArgs e)
-        {
-            if (SignUpPasswordBox.Password == "password") SignUpPasswordBox.Password = "";
-        }
-
-        private void SignUpPasswordBoxMouseLeave(object sender, MouseEventArgs e)
-        {
-            if (SignUpPasswordBox.Password == "") SignUpPasswordBox.Password = "password";
-        }
-
         private void ButtonMinimize_MouseLeftButtonDown(object sender, MouseButtonEventArgs e)
         {
             this.WindowState = WindowState.Minimized;
@@ -98,7 +38,7 @@ namespace ChatHubWPF
 
         private void LoginButtonClick(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(SignInUsernameBox.Text);
+            Window1 window1 = new Window1(SignUpNameBox.Text, SignUpUsernameBox.Text);
             window1.Show();
             this.Close();
             //pti kpnenw login service-in
@@ -106,10 +46,84 @@ namespace ChatHubWPF
 
         private void RegistrationButtonClick(object sender, RoutedEventArgs e)
         {
-            Window1 window1 = new Window1(SignInUsernameBox.Text);
+            Window1 window1 = new Window1(SignUpNameBox.Text, SignUpUsernameBox.Text);
             window1.Show();
             this.Close();
             //pti kpnenq registration service-in
+        }
+
+        private void SignInUsernameBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignInUsernameBox.Text == "") SignInUsernameBox.Text = "Username";
+        }
+        private void SignInUsernameBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignInUsernameBox.Text == "Username") SignInUsernameBox.Text = "";
+        }
+        private void SignInPasswordBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignInPasswordBox.Text == "") SignInPasswordBox.Text = "password";
+        }
+        
+        private void SignInPasswordBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignInPasswordBox.Password == "password") SignInPasswordBox.Password = "";
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignUpNameBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignUpNameBox.Text == "Name") SignUpNameBox.Text = "";
+        }
+
+        private void SignUpNameBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignUpNameBox.Text == "") SignUpNameBox.Text = "Name";
+        }
+        /// <summary>
+        /// /////////////////////
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignUpEmailBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignUpEmailBox.Text == "Email") SignUpEmailBox.Text = "";
+        }
+
+        private void SignUpEmailBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignUpEmailBox.Text == "") SignUpEmailBox.Text = "Email";
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignUpUsernameBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignUpUsernameBox.Text == "") SignUpUsernameBox.Text = "Username";
+        }
+
+        private void SignUpUsernameBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignUpUsernameBox.Text == "Username") SignUpUsernameBox.Text = "";
+        }
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="sender"></param>
+        /// <param name="e"></param>
+        private void SignUpPasswordBoxKeyDown(object sender, KeyEventArgs e)
+        {
+            if (SignUpPasswordBox.Text == "") SignUpPasswordBox.Text = "password";
+        }
+
+        private void SignUpPasswordBoxPreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            if (SignUpPasswordBox.Password == "password") SignUpPasswordBox.Password = "";
         }
     }
 }

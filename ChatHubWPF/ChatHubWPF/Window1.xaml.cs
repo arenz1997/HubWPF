@@ -33,10 +33,12 @@ namespace ChatHubWPF
         static string messageapi = "http://localhost:51591/api/values";
         static string updateinfoapi = "http://localhost:51586/api/values";
         static string Username;
+        static string Name;
         static List<object> oldList = new List<object>();
-        public Window1(string username)
+        public Window1(string name, string username)
         {
             Username = username;
+            Name = name;
             InitializeComponent();
             
             oldList.Add("Vzgo");
@@ -52,8 +54,8 @@ namespace ChatHubWPF
         }
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            UserNameLabel.Content = "arenz1997";//Username;
-            NameUser.Content = "Aren";//User's name;
+            UserNameLabel.Content = Username;//Username;
+            NameUser.Content = Name;//User's name;
             
             //loopi mej kanchelu a update@(cerekov kanenq hesht a)
             //HttpClient client = new HttpClient();
